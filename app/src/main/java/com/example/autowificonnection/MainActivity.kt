@@ -120,6 +120,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun turnoff_on() {
+        println("turn off on.........")
         //method2
         val intent = Intent(this, WiFiSwitchService_TurnOffOnWifi::class.java)
         intent.putExtra(TAG_RESULT_RECIEVER, object : ResultReceiver(Handler()) {
@@ -164,7 +165,7 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         println("granted permission...")
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            //disconnect_then_connect()
+//            disconnect_then_connect()
             turnoff_on()
         }
     }
